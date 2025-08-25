@@ -1,4 +1,4 @@
-'use client';
+
 
 import "./globals.css";
 import { cn } from "@/lib/utils";
@@ -12,7 +12,7 @@ import type { Metadata } from "next";
 import { Open_Sans } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
 
-import { useRouter } from 'next/navigation';
+
 
 const openSans = Open_Sans({ subsets: ["latin"] });
 
@@ -26,11 +26,10 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const router = useRouter();
+
   return (
     <ClerkProvider
       frontendApi={process.env.NEXT_PUBLIC_CLERK_FRONTEND_API}
-      navigate={(to) => router.push(to)}
    afterSignInUrl={process.env.NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL} // sign-in redirect
       afterSignUpUrl={process.env.NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL}
     >
@@ -54,6 +53,7 @@ export default function RootLayout({
     </ClerkProvider>
   );
 }
+
 
 
 
