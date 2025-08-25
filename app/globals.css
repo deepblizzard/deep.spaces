@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+:root {
+  height: 100%;
+}
+
+button::-webkit-details-marker {
+  display: none;
+}
+
+[data-state] > button {
+  appearance: none;
+}
+
+button::-webkit-search-cancel-button,
+button::-webkit-inner-spin-button,
+button::-webkit-clear-button,
+input::-webkit-search-cancel-button,
+input::-webkit-clear-button {
+  -webkit-appearance: none;
+  appearance: none;
+  display: none;
+}
+
+.dropdown-trigger::-webkit-search-cancel-button,
+.dropdown-trigger::-webkit-clear-button {
+  display: none !important;
+}
+
+*::-webkit-clear-button,
+*::-webkit-inner-spin-button,
+*::-webkit-search-cancel-button {
+  display: none !important;
+  -webkit-appearance: none !important;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 20 14.3% 4.1%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 20 14.3% 4.1%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 14.3% 4.1%;
+
+    --primary: 24 9.8% 10%;
+    --primary-foreground: 60 9.1% 97.8%;
+
+    --secondary: 60 4.8% 95.9%;
+    --secondary-foreground: 24 9.8% 10%;
+
+    --muted: 60 4.8% 95.9%;
+    --muted-foreground: 25 5.3% 44.7%;
+
+    --accent: 60 4.8% 95.9%;
+    --accent-foreground: 24 9.8% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 60 9.1% 97.8%;
+
+    --border: 20 5.9% 90%;
+    --input: 20 5.9% 90%;
+    --ring: 20 14.3% 4.1%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 220 13% 7%; /* #0d1117 */
+    --foreground: 220 13% 95%; /* light text on dark bg */
+
+    --card: 220 13% 7%; /* #0d1117 */
+    --card-foreground: 220 13% 95%;
+
+    --popover: 220 13% 7%; /* #0d1117 */
+    --popover-foreground: 220 13% 95%;
+
+    --primary: 220 13% 95%; /* almost white */
+    --primary-foreground: 220 13% 7%;
+
+    --secondary: 220 17% 3%; /* #03050a */
+    --secondary-foreground: 220 13% 95%;
+
+    --muted: 220 19% 5%; /* #080a0f */
+    --muted-foreground: 220 8% 65%;
+
+    --accent: 220 19% 5%; /* #080a0f */
+    --accent-foreground: 220 13% 95%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 220 13% 95%;
+
+    --border: 220 19% 5%; /* #080a0f */
+    --input: 220 19% 5%; /* #080a0f */
+    --ring: 220 13% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
