@@ -23,7 +23,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <ClerkProvider>
+    <ClerkProvider
+    signInUrl="https://deepspaces.abhyudaya.space/sign-in"
+  signUpUrl="https://deepspaces.abhyudaya.space/sign-up"
+  afterSignInUrl="https://deepspaces.abhyudaya.space/"
+  afterSignUpUrl="https://deepspaces.abhyudaya.space/"
+    >
       <html lang="en" suppressHydrationWarning>
         <body
           className={cn(openSans.className, "bg-white dark:bg-[#0d1117]")}
