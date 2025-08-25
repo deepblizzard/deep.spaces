@@ -10,6 +10,8 @@ import type { Metadata } from "next";
 import { Open_Sans } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
 
+import { useRouter } from 'next/navigation';
+
 const openSans = Open_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -22,6 +24,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const router = useRouter();
   return (
     <ClerkProvider
    frontendApi={process.env.NEXT_PUBLIC_CLERK_FRONTEND_API}
@@ -49,6 +52,7 @@ export default function RootLayout({
     </ClerkProvider>
   );
 }
+
 
 
 
