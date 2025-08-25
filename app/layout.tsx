@@ -24,7 +24,10 @@ export default function RootLayout({
 }) {
   return (
     <ClerkProvider
-   
+   frontendApi={process.env.NEXT_PUBLIC_CLERK_FRONTEND_API}
+      navigate={(to) => router.push(to)}                // ensures redirects work
+      afterSignInUrl={process.env.NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL}
+      afterSignOutUrl={process.env.NEXT_PUBLIC_CLERK_AFTER_SIGN_OUT_URL}
     >
       <html lang="en" suppressHydrationWarning>
         <body
@@ -46,5 +49,6 @@ export default function RootLayout({
     </ClerkProvider>
   );
 }
+
 
 
