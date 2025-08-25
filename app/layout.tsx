@@ -24,10 +24,11 @@ export default function RootLayout({
 }) {
   return (
     <ClerkProvider
-    signInUrl="https://deepspaces.abhyudaya.space/sign-in"
-  signUpUrl="https://deepspaces.abhyudaya.space/sign-up"
-  afterSignInUrl="https://deepspaces.abhyudaya.space/"
-  afterSignUpUrl="https://deepspaces.abhyudaya.space/"
+    publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}
+  signInUrl="/sign-in"
+  signUpUrl="/sign-up"
+  afterSignInUrl="/"
+  afterSignUpUrl="/"
     >
       <html lang="en" suppressHydrationWarning>
         <body
@@ -49,3 +50,4 @@ export default function RootLayout({
     </ClerkProvider>
   );
 }
+
